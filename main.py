@@ -1,9 +1,38 @@
-# import libraries
+''''
+This is a test program to calculate an "a-score" for a given semiconductor wafer cleaning process.
+
+This program is meant to test the concept of a score for a given semiconductor wafer cleaning process. It will later be expanded to include a more complex scoring system and a GUI.
+
+How it works:
+
+The crieteria this specific program is based on are:
+    
+    1. Partical residue (weighted 2)
+        We expect an input score from 
+
+    2. Chemical residue (weighted 2)
+
+
+    3. Surface damage   (weighted 1)
+
+
+    4. Oxide control    (weighted 1)
+
+
+    5. Reliability     (weighted 1)
+
+
+
+
+
+
+
+'''
 
 # create master dictionary for criteria
 criteria_dict = {}
 
-# define and weight criteria and append to master dictionary
+# define and weight criteria and append to master dictionar#
 criteria_dict[0] = {'weight': 0.5, 'description': 'partical residue', 'score' : 0}
 criteria_dict[1] = {'weight': 0.7, 'description': 'chemical residue', 'score' : 0}
 criteria_dict[2] = {'weight': 1, 'description': 'surface damage', 'score' : 0}
