@@ -13,14 +13,14 @@ rng = np.random.RandomState(random_state)
 tuple_state = rng.get_state()
 
 # Define noise level as a fraction of each column's std deviation
-noise_fraction = 0.10  # 10% noise
+noise_fraction = 0.40  # 40% noise
 
 # List of numeric feature columns to perturb
 target_cols = [
     'Surface_Roughness_nm', 'Defect_Density_per_cm2', 'Etch_Rate_nm_per_min',
     'Interface_Trap_Density_cm2_eV', 'Fixed_Oxide_Charge_C_per_cm2',
     'Minority_Carrier_Lifetime_us', 'PN_Junction_Leakage_A_per_cm2',
-    'Gate_Oxide_Breakdown_MV_per_cm', 'Pit_Density_per_cm2', 'Damage_Prob'
+    'Gate_Oxide_Breakdown_MV_per_cm', 'Pit_Density_per_cm2',
 ]
 
 # Add Gaussian noise to each column
@@ -29,14 +29,12 @@ for col in target_cols:
     noise = rng.normal(loc=0, scale=noise_fraction * std_dev, size=df.shape[0])
     df[col] += noise
 
-# Ensure probabilities remain in [0,1]
-df['Damage_Prob'] = df['Damage_Prob'].clip(0, 1)
 
 # Restore RNG state if needed elsewhere
 rng.set_state(tuple_state)
 
 
-# Save the noisy dataset in the same folder as this script
+# Save the noisy dataset 
 csv_path = os.path.join(os.path.dirname(__file__), 'synthetic_data.csv')
 df.to_csv(csv_path, index=False)
 

@@ -1,7 +1,7 @@
 import pandas as pd
 import seaborn as sns
 from sklearn.model_selection import train_test_split
-from sklearn.ensemble import RandomForestClassifier
+from sklearn.ensemble import RandomForestRegressor
 
 ''' Parse Synthetic Data CSV File '''
 
@@ -12,22 +12,20 @@ df = pd.read_csv("C:/Users/aarav/OneDrive/Desktop/myCode/science_extension/synth
 df.drop('Cleaning_Method', axis=1, inplace=True)  
 
 
-''' Traning Random Forest Classifier '''
+''' Traning Random Forest Regressor '''
 
 # split the data into features (X) and target (y)
-X = df.drop(['Pass_Fail', 'Damage_Prob'], axis=1)  # features
-y = df['Pass_Fail']  # target variable
+X = df.drop(['Damage_Prob'], axis=1)  # features
+y = df['Damage_Prob']  # target variable
 
 # split the dataset into training and testing sets
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=0)
 
-# build the random forest classifier
-rfc = RandomForestClassifier(n_estimators=30, random_state=0)
+# build the random forest regression model
+rfc = RandomForestRegressor(n_estimators=30, random_state=0)
 
 # fit the model to the training data
 rfc.fit(X_train, y_train)
 
 # print model score
 print(rfc.score(X_test, y_test))
-
-
