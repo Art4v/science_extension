@@ -1,0 +1,38 @@
+*** Damage Metrics for FEOL Cleaning ***
+
+- Surface roughness (RMS) – the root-mean-square variation of surface height on the wafer (nm). It
+quantifies topographical damage from cleaning; for example, prolonged SC‑1 (NH₄OH/H₂O₂)
+exposure increases RMS roughness and correspondingly raises gate‑oxide breakdown rates .
+
+- Defect density – the number of surface defects (particles, scratches, pits, etc.) per unit area (#/cm²).
+Cleaning-induced damage often appears as extra defects or broken features; e.g. cleaning with
+NH₄OH dramatically increases the defect density on patterned wafers .
+
+- Etch rate (material loss) – the rate of silicon removal by the cleaning solution (Å/min or nm/min).
+This measures unintended substrate thinning; for instance, the standard SC-1 clean etches Si at
+≈0.8 nm/min (8 Å/min) in a 1:1:5 mixture . Excessive etching alters film thicknesses and device
+dimensions.
+
+- Interface trap density (D<sub>it</sub>) – the density of electronic trap states at the Si–SiO₂
+interface (cm⁻²·eV⁻¹). Cleaning steps can introduce interface defects; higher D<sub>it</sub> means
+more charge traps at the interface, degrading transistor threshold and mobility .
+
+- Fixed oxide charge (Q<sub>f</sub>) – net fixed charge in the gate oxide per area (C/cm²). Damage
+from cleaning (e.g. by plasma or residues) can deposit or generate charge in the oxide. A higher
+Q<sub>f</sub> shifts device flat-band voltage and impairs oxide reliability .
+
+- Minority carrier lifetime (τ) – the average time minority carriers survive before recombining (μs). A
+shorter lifetime after cleaning indicates more recombination centers (surface or bulk defects)
+introduced by contamination or damage . This is critical for devices relying on diffusion or drift
+carriers.
+
+- PN-junction leakage current – reverse-bias leakage current of a p–n junction (A/cm²). Cleaninginduced defects or metal impurities create generation paths, so higher leakage signals more
+damage. For example, heavy-metal residues increase junction reverse leakage .
+
+- Gate-oxide breakdown field – the electric field at which gate oxide fails (MV/cm). Damage
+(roughness, contamination) from cleaning degrades oxide integrity; rougher or contaminated
+interfaces break down at lower fields . A reduced breakdown field predicts lower device yield.
+
+- Pit density – the number of microscopic etch pits per area (pits/cm²). These pits can form where
+metal particles sit during wet cleans. For example, copper particles in SC-1 produce etch pits on the
+Si surface . A higher pit density marks localized corrosion/damage that can trap defects. 
