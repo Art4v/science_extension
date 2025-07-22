@@ -11,7 +11,6 @@ import os
 # import as pandas dataframe
 script_dir = os.path.dirname(os.path.abspath(__file__))
 csv_path = os.path.join(script_dir, "..", "synthetic_data", "synthetic_data.csv")
-print(csv_path)
 df = pd.read_csv(csv_path)
 
 
@@ -61,3 +60,13 @@ metrics = {
 # print metrics
 print("Random Forest Regressor Performance Metrics:")
 print(pd.DataFrame(metrics).T)
+
+# write X_train, y_train, X_test, y_test, and y_pred to a csv file
+test_results = X_test.copy()
+test_results['y_test'] = y_test.values
+test_results['y_pred'] = y_pred
+
+out_path = os.path.join(script_dir, "..", "graphical_analysis", "results.csv")
+test_results.to_csv(out_path, index=False)
+
+

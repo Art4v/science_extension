@@ -40,3 +40,4 @@ csv_path = os.path.join(os.path.dirname(__file__), 'synthetic_data.csv')
 df.to_csv(csv_path, index=False)
 
 print(f"Dataset noised with random_state={random_state}")
+

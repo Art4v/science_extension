@@ -130,5 +130,3 @@ df.to_csv(csv_path, index=False)
 
 # print the first 5 rows of the DataFrame rounded to 3 decimals
 print("Raw synthetic data generated and saved with random_state={random_state}")
-
-
